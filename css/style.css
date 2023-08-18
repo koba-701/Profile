@@ -28,11 +28,9 @@ a{
     color: #ffffff;
     text-decoration: none;
 }
-a:visited{
-    color: #696969;
-}
+
 a:hover{
-    text-decoration: underline;
+    text-decoration:underline;
 }
 
 a img:hover{
@@ -211,6 +209,9 @@ footer small{
     border-left: 7px solid #9cb4a4;
 }
 
+.sub-icon:before{
+    content: "● ";
+}
 #about .profile-text{
     width: 700px;
     float: left;
@@ -247,12 +248,13 @@ table{
     clear: both;
 }
 
-section{
+#about .main section{
     margin-bottom: 300px;
     border-collapse: collapse;
 }
 /*=============================================================*/
 .char{position: relative;}
+
 .put-center{
     position: absolute;
     top: 50%;
@@ -260,19 +262,98 @@ section{
     transform: translate(-50%, -50%);
 }
 #portfolio{
-    background-image: url(/images/bg-portfolio.jpg);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-attachment: fixed;
-    background-size: 100% 60%;
+    background-color: #0fb7fa;
 }
 
 #portfolio a{
     color:#000000;
 }
+
+#portfolio .main section{
+    margin-bottom: 30px;
+    overflow: auto;
+}
+
+
+/*=======================================================================-=*/
+#hobbies{
+    background-image: url(/images/bg-hobby.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: 100% auto;
+}
+
+#hobbies .main section{
+    margin-bottom:40px; 
+}
+
+#hobbies .list{
+    margin-bottom: 80px;
+}
+
+#hobbies .list li{
+    float: left;
+    list-style: none;
+    margin: 0 20px 15px 0;
+    text-align: center;
+}
+
+#hobbies .list li:nth-chiled(3n){
+    margin-right: 0;
+}
+
+#hobbies #shopping .list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#hobbies .list img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#hobbies .main a {
+    position: relative;
+    color: #000000;
+    font-family: 'Bitter', serif;
+    text-decoration: none;
+    padding-top: 30px;
+
+}
+
+#hobbies .main a::after{
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #000000;
+    bottom: -6px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+#hobbies .main a:hover::after{
+    visibility: visible;
+    bottom: -2px;
+    opacity: 1;
+}
+/*=========================================================================*/
+#contact{
+    background-color: #0fb7fa;
+}
+#contact a{
+    color: #000000;
+}
+
+/*======================================================================================*/
 .sidebar{
     width: 200px;
-    margin: 0 10px 0 20px;
+    margin-right:10px;
     float: right;
     font-family: 'Bitter', serif;
 }
@@ -285,71 +366,122 @@ section{
 .sidebar ul{
     font-size: 20px;
     margin-left: 20px;
-}
-
-.sidebar ul a{
-    color: #333333;
-}
-#portfolio .sidebar li{
-    list-style-type: square;
-}
-
-#portfolio section{
     margin-bottom: 30px;
-    overflow: auto;
+}
+
+.sidebar li{
+    list-style-type: square;
+    margin-bottom: 10px;
+}
+
+.sidebar a{
+    position: relative;
+    color: #000000;
+    text-decoration: none;
+}
+
+.sidebar a::after{
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #000000;
+    bottom: -1px;
+    transform: scale(0,1);
+    transform-origin: left top;
+    transition: transform 0.3s;
+}
+
+.sidebar a:hover::after{
+    transform: scale(1,1);
 }
 
 .main{
     width: 800px;
-    margin: 0 0 0 470px;
+    margin: 0 0 0 25.3% ; 
     float:left;
 }
-/*=======================================================================-=*/
-#hobbies{
-    background-image: url(/images/bg-hobby.jpg);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-attachment: fixed;
-    background-size: 100% 40%;
+
+@media screen and (max-width:600px){
+    /*画面サイズが600px以下の場合に適用*/
+    body{
+        font-size: 3.5vw;
+    }
+
+    h1{
+        font-size: 7.2vw;
+    }
+
+    h2{
+        font-size: 6vw;
+    }
+
+    header{
+        width: auto;
+        margin: 0.5%;
+    }
+
+    .logo{
+        float: none;
+        margin-top: 60px;
+        text-align: center;
+    }
+
+    .global-nav{
+        float: none;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .global-nav li{
+        display: inline;
+        margin: 0 8px;
+    }
+
+    #wrap{
+        margin-top: 80px;
+        padding: 35px 0 0;
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    .content{
+        width: 100%;
+        margin: 0;
+    }
+
+    .main{
+        float: none;
+        width: auto;
+        margin: 0 5%;
+    }
+
+    .main-center{
+        float: none;
+        width: auto;
+        margin: 0 5%;
+    }
+
+    .main-center{
+        float: none;
+        width: auto;
+        margin: 0 5%;
+    }
+
+    h2 img{
+        max-width: 100%;
+    }
+
+    .sidebar{
+        width: auto;
+        float: none;
+        margin: 0;
+        padding: 30px 10% 10px;
+        background-color:#0fb7fa;
+    }
 }
-
-#hobbies section{
-    margin-bottom:50px; 
-}
-
-#hobbies .list{
-    margin-bottom: 90px;
-}
-
-#hobbies .list li{
-    float: left;
-    list-style: none;
-    margin: 0 20px 15px 0;
-    text-align: center;
-}
-
-#hobbies #shopping .list {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#hobbies .list img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 10px;
-}
-
-#hobbies a {
-    color: #000000;
-    font-family: 'Bitter', serif;
-    text-decoration: none;
-    display: block;
-    margin-top: 5px;
-}
-
-
-
 
 
 
